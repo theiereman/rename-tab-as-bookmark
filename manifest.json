@@ -1,4 +1,11 @@
 {
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "renametabasbookmark@firefoxextension.org",
+      "strict_min_version": "112.0"
+    }
+  },
+
   "manifest_version": 3,
   "name": "RenameTabAsBookmark",
   "version": "1.0",
@@ -11,8 +18,8 @@
   },
 
   "icons": {
-    "48": "icons/RenameTabAsBookMark.png",
-    "96": "icons/RenameTabAsBookMark@2x.png"
+    "48": "icons/RenameTabAsBookmark.png",
+    "96": "icons/RenameTabAsBookmark@2x.png"
   },
 
   "host_permissions": ["<all_urls>"],
