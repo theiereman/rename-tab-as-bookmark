@@ -3,11 +3,16 @@
   "name": "RenameTabAsBookmark",
   "version": "1.0",
 
-  "description": "Automaticallly renames the current tab with the bookmark name.",
+  "description": "Automaticallly renames every browser tabs with first bookmark title matching the tab URL.",
 
   "background": {
     "scripts": ["rename_tab_as_bookmark.js"],
     "type": "module"
+  },
+
+  "icons": {
+    "48": "icons/RenameTabAsBookMark.png",
+    "96": "icons/RenameTabAsBookMark@2x.png"
   },
 
   "host_permissions": ["<all_urls>"],
