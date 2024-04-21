@@ -51,7 +51,7 @@ async function renameAllBookmarkedTabs() {
         //       set: function () {},
         //     });
         //   },
-        });
+        //});
       } catch (e) {
         console.log(`Error for the tab ${tab.title} (${tab.url})`, e);
         return;
