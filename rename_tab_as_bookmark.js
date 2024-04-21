@@ -39,6 +39,19 @@ async function renameAllBookmarkedTabs() {
           },
           args: [foundBookmarks[0].title],
         });
+
+        //TODO : currently not working for unknown reason
+        //prevent current page to change document.title
+        // await browser.scripting.executeScript({
+        //   target: {
+        //     tabId: tab.id,
+        //   },
+        //   func: () => {
+        //     Object.defineProperty(document, "title", {
+        //       set: function () {},
+        //     });
+        //   },
+        });
       } catch (e) {
         console.log(`Error for the tab ${tab.title} (${tab.url})`, e);
         return;
