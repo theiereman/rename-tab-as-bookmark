@@ -4,8 +4,6 @@ async function requestPermissionsIfNeeded() {
     permissions: ["tabs", "bookmarks", "scripting"],
   };
 
-  console.log("requestPermissionsIfNeeded");
-
   if (!(await browser.permissions.contains(neededPermissions))) {
     await browser.permissions.request(neededPermissions);
   }
@@ -16,6 +14,11 @@ async function renameAllBookmarkedTabs() {
     let tabs = await browser.tabs.query({});
     tabs.forEach(async (tab) => {
       try {
+        //to avoid matching unvalid urls
+        if (!tab.url.startsWith("http")) {
+          return;
+        }
+
         //search a bookmark corresponding to tab url
         let foundBookmarks = await browser.bookmarks.search({
           url: tab.url,
