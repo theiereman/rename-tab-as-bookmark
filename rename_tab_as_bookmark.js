@@ -1,13 +1,6 @@
-async function requestPermissionsIfNeeded() {
-  let neededPermissions = {
-    origins: ["<all_urls>"],
-    permissions: ["tabs", "bookmarks", "scripting"],
-  };
-
-  if (!(await browser.permissions.contains(neededPermissions))) {
-    await browser.permissions.request(neededPermissions);
-  }
-}
+const neededPermissions = {
+  origins: ["<all_urls>"],
+};
 
 async function renameAllBookmarkedTabs() {
   try {
@@ -64,7 +57,6 @@ async function renameAllBookmarkedTabs() {
 }
 
 //fire event at each new tab
-browser.tabs.onUpdated.addListener(requestPermissionsIfNeeded);
 browser.tabs.onUpdated.addListener(renameAllBookmarkedTabs);
 
 //checks for bookmark changes (new bookmark, deletion, name change, url change)
